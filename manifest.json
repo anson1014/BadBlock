@@ -1,12 +1,12 @@
 {
   "manifest_version": 2,
 
-  "name": "Python Chrome Plugin",
-  "description": "This extension runs Python code.",
+  "name": "BadBlock",
+  "description": "Block out the haters.",
   "version": "1.0",
 
   "browser_action": {
-    "default_icon": "icon.png",
+    "default_icon": "Biconimage.png",
     "default_popup": "popup.html"
   },
   "permissions": [
