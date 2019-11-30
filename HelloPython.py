@@ -6,6 +6,8 @@ def mode():
   
   print(choice)
   
+  #TESTIGINGINGINGINIGNGINGINGIN
+  
   current = ""
   
   if choice == 1:
