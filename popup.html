@@ -6,12 +6,28 @@
  -->
 <html>
   <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- Add icon library -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Getting Started Extension's Popup</title>
     <style>
-        button {
+      .btn {
+          background-color: red;
+          border: none;
+          color: white;
+          padding: 12px 16px;
+          font-size: 16px;
+          cursor: pointer;
+        }
+      .button {
           height: 30px;
           width: 30px;
           outline: none;
+        }
+
+        /* Darker background on mouse-over */
+        .btn:hover {
+          background-color: crimson;
         }
       body {
         font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
@@ -22,7 +38,8 @@
         white-space: pre;
         text-overflow: ellipsis;
         overflow: hidden;
-        max-width: 400px;
+        min-width: 500px;
+        max-width: 500px;
       }
     </style>
 
@@ -37,6 +54,21 @@
   <body>
     <div id="status"></div>
     <img id="image-result" hidden>
-    <button id="changeColor"></button>
+
+    <h2>Bad Blockers:</h2>
+    <button name = "butt" class="btn"><i class="fa fa-flag"></i> On/Off</button>
+
+    <form action="/action_page.php">
+    <p>What level of censorship would you like?</p>
+      <input type="radio" name="censorship selection"
+    value="makegood"> MAKE GOOD<br>
+      <input type="radio" name="censorship selection"
+    value="makeneutral"> MAKE NEUTRAL</br>
+      <input type="radio" name="censorship selection"
+    value="makegone"> MAKE GONE</br>
+
+      <input type="submit" value="Submit">
+  </form>
+
   </body>
   </html>
