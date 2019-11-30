@@ -61,18 +61,18 @@ def bad_words_store():
     mySet = set()
     for x in f:
         mySet.add(x)
-    
-    print(len(mySet))
+    return mySet
 
 
 
   
 def phrase_fix(dictionary):
+  badSet = bad_words_store()
   phrase = input("Insert here: ")
   words = phrase.split()
   for x in range(len(words)):
       badword = words[x]
-      if (badword in dictionary):
-        words[x] = dictionary.get(badword)
+      if (badword in badSet):
+        words[x] = "BLEEP"
         new_phrase = " ".join(words)
   print(new_phrase)
