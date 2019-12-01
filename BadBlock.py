@@ -19,8 +19,9 @@ def mode():
 
 
 #   fuckprint("phrase: " + phrase)
-  
-def phrase_fix(dictionary):
+
+##FOR ALL BAD WORDS
+def phrase_fix_neutralize(dictionary):
   phrase = input("Insert phrase to BadBlock here: ")
   words = phrase.split()
   for x in range(len(words)):
@@ -38,8 +39,9 @@ def bad_words_store():
     for x in f:
         mySet.add(x)
     return mySet
-  
-def phrase_fix(dictionary):
+    
+##REPLACES WITH BLEEP
+def phrase_fix_bleep(dictionary):
   badSet = bad_words_store()
   phrase = input("Insert here: ")
   words = phrase.split()
