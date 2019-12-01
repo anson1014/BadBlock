@@ -10,6 +10,15 @@
 // checkWord("yo");
 // checkWord("fuck");
 
+var json = require('badwordsjson.json')
+
+let badwordset;
+
+badWordSetAdder = function(word){
+   for (var key in json) {
+      badwordset.add(key);
+   }
+}
 
 wordReplace = function(word){
    switch (word){
@@ -22,5 +31,20 @@ wordReplace = function(word){
       case ("nigger"|"nigga"): return "neighbour"
       case ("dick"|"penis"): return "male genitalia"
       case ("pussy"|"vagina"|"cunt"): return "female genitalia"
+      }
    }
-}
+
+phrase_fix = function(text, set){
+   let text = "";
+   let words = text.split();
+   let badwordset = badWordSetAdder(json);
+   
+   for (let x in set) {
+     let badword = words[x];
+     if (badwordset.contains(badword)){
+       words[x] = wordReplace(badword);
+       let new_text = words.join();
+     }
+   }
+   return new_text;
+ }

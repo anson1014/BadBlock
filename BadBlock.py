@@ -52,15 +52,17 @@ def phrase_fix_bleep(dictionary):
         new_phrase = " ".join(words)
   print(new_phrase)
 
-def wordReplace(word):
-  switcher = {
-    fuck: return "diddle"
-    fucker: return "diddler"
-    fucking: return "diddling"
-    motherfucker: return "mother flubber"
-    bitch: return "snitch"
-    nigger or nigga: return "neighbour"
-    dickpenis: return "male genitalia"
-    pussy or vagina or cunt: return "female genitalia"
-    else: return "BLEEP"
-  }
+
+converted to javascript
+# def wordReplace(word):
+#   switcher = {
+#     fuck: return "diddle"
+#     fucker: return "diddler"
+#     fucking: return "diddling"
+#     motherfucker: return "mother flubber"
+#     bitch: return "snitch"
+#     nigger or nigga: return "neighbour"
+#     dickpenis: return "male genitalia"
+#     pussy or vagina or cunt: return "female genitalia"
+#     else: return "BLEEP"
+#   }
