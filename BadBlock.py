@@ -17,30 +17,6 @@ def mode():
   
   print('Your current mode is: ' + current)
 
-def profanity_fix(dictionary):
-  print('What phrase would you like to fix?')
-  phrase = input("Insert here: ")
-  phrase = phrase.split() # list
-  bad_words = []
-  for split in phrase:
-    if (split in dictionary):
-      bad_words.append(split)
-  good_words = []
-  for bad_word in bad_words:
-    good_words.append(dictionary.get(bad_word))
-  
-  new_phrase = ""
-  for i in range(len(good_words)):
-    print("index: " + str(i))
-    print("phrase " + str(phrase))
-    new_phrase = ' '.join(phrase)
-    new_phrase = new_phrase.replace(bad_words[i],good_words[i]) 
-    #phrase = new_phrase
-    print("new phrase: " + str(new_phrase))
-    print("bad words: " + str(bad_words))
-    print("good words: " + str(good_words))
-
-    
 
 #   fuckprint("phrase: " + phrase)
   
@@ -62,9 +38,6 @@ def bad_words_store():
     for x in f:
         mySet.add(x)
     return mySet
-
-
-
   
 def phrase_fix(dictionary):
   badSet = bad_words_store()
@@ -73,6 +46,19 @@ def phrase_fix(dictionary):
   for x in range(len(words)):
       badword = words[x]
       if (badword in badSet):
-        words[x] = "BLEEP"
+        words[x] = wordReplace(badword)
         new_phrase = " ".join(words)
   print(new_phrase)
+
+def wordReplace(word):
+  switcher = {
+    fuck: return "diddle"
+    fucker: return "diddler"
+    fucking: return "diddling"
+    motherfucker: return "mother flubber"
+    bitch: return "snitch"
+    nigger or nigga: return "neighbour"
+    dickpenis: return "male genitalia"
+    pussy or vagina or cunt: return "female genitalia"
+    else: return "BLEEP"
+  }

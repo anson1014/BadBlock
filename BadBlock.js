@@ -9,3 +9,4 @@ checkWord = function(word){
 checkWord("bitch");
 checkWord("yo");
 checkWord("fuck");
+
