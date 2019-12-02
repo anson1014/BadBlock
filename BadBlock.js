@@ -14,10 +14,13 @@ var json = require('badwordsjson.json')
 
 let badwordset;
 
+var toReplace = $('body').text()
+
 badWordSetAdder = function(word){
    for (var key in json) {
       badwordset.add(key);
    }
+   return badwordset
 }
 
 wordReplace = function(word){
@@ -34,12 +37,11 @@ wordReplace = function(word){
       }
    }
 
-phrase_fix = function(text, set){
-   let text = "";
+phrase_fix = function(text){
    let words = text.split();
    let badwordset = badWordSetAdder(json);
    
-   for (let x in set) {
+   for (let x in badwordset) {
      let badword = words[x];
      if (badwordset.contains(badword)){
        words[x] = wordReplace(badword);
@@ -48,3 +50,7 @@ phrase_fix = function(text, set){
    }
    return new_text;
  }
+
+
+ document.getElementById("butt").addEventListener("click", phrase_fix(toReplace));
+
